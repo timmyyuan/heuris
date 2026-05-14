@@ -27,6 +27,8 @@ This directory contains Go static-analysis heuristic projects.
 
 `dupl` and `gocognit` are syntax-only and accept file or directory paths. `prealloc` is syntax-first, accepts Go package patterns, and can optionally fall back to typechecking. `unused` accepts Go package patterns and loads type information because unused-code analysis depends on typed object identity.
 
+All four package APIs support `ExcludePathSubstrings` in their options. Any diagnostic whose file path contains one of those configured substrings is excluded.
+
 When using the submodules from this repository in a Go module, add local replacements so imports resolve to the checked-out rule projects:
 
 ```go
