@@ -18,13 +18,14 @@ This directory contains Go static-analysis heuristic projects.
 
 ## Package APIs
 
-`dupl`, `gocognit`, and `prealloc` expose package APIs that return native Go structs and can convert to or from golangci-lint-style JSON reports.
+`dupl`, `gocognit`, `prealloc`, and `unused` expose package APIs that return native Go structs and can convert to or from golangci-lint-style JSON reports.
 
 - `dupl`: import `github.com/mibk/dupl/pkg`, then call `CheckPaths`, `CheckFiles`, or `CheckGolangCILintJSON`.
 - `gocognit`: import `github.com/uudashr/gocognit`, then call `CheckPaths`, `CheckFiles`, or `CheckGolangCILintJSON`.
 - `prealloc`: import `github.com/alexkohler/prealloc/pkg`, then call `CheckPackages`, `CheckPackageLines`, or `CheckPackageGolangCILintJSON`.
+- `unused`: import `honnef.co/go/tools/unused`, then call `CheckPackages`, `CheckPaths`, or `CheckGolangCILintJSON`.
 
-These APIs are syntax-first. `dupl` and `gocognit` accept file or directory paths. `prealloc` accepts Go package patterns and can optionally fall back to typechecking.
+`dupl` and `gocognit` are syntax-only and accept file or directory paths. `prealloc` is syntax-first, accepts Go package patterns, and can optionally fall back to typechecking. `unused` accepts Go package patterns and loads type information because unused-code analysis depends on typed object identity.
 
 When using the submodules from this repository in a Go module, add local replacements so imports resolve to the checked-out rule projects:
 
@@ -32,4 +33,5 @@ When using the submodules from this repository in a Go module, add local replace
 replace github.com/mibk/dupl => ./rules/go/dupl
 replace github.com/uudashr/gocognit => ./rules/go/gocognit
 replace github.com/alexkohler/prealloc => ./rules/go/prealloc
+replace honnef.co/go/tools => ./rules/go/unused
 ```
