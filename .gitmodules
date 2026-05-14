@@ -1,3 +1,12 @@
 [submodule "prealloc"]
 	path = rules/go/prealloc
 	url = https://github.com/timmyyuan/prealloc
+[submodule "rules/go/dupl"]
+	path = rules/go/dupl
+	url = https://github.com/timmyyuan/dupl
+[submodule "rules/go/gocognit"]
+	path = rules/go/gocognit
+	url = https://github.com/timmyyuan/gocognit
+[submodule "rules/go/unused"]
+	path = rules/go/unused
+	url = https://github.com/timmyyuan/unused

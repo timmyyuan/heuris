@@ -8,13 +8,16 @@ heuris/
 │   ├── README.md
 │   └── go/
 │       ├── README.md
-│       └── prealloc/   # Git submodule
+│       ├── dupl/       # Git submodule
+│       ├── gocognit/   # Git submodule
+│       ├── prealloc/   # Git submodule
+│       └── unused/     # Git submodule
 └── README.md
 ```
 
 Rule projects live under `rules/<language>/<rule-name>`. These projects can stay independently versioned as Git submodules while Heuris keeps the higher-level structure, documentation, replay conventions, and cross-rule orchestration in the main repository.
 
-`prealloc` is currently managed as the Go rule submodule at `rules/go/prealloc`.
+The current Go rule submodules are `dupl`, `gocognit`, `prealloc`, and `unused`.
 
 ## Inspiration
 
